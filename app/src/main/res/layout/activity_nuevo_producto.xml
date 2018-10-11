@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NuevoProductoActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingrese un producto a la lista de compras"
+        />
+
+    <EditText
+        android:id="@+id/ingresarNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nombre del producto"
+        />
+
+    <EditText
+        android:id="@+id/ingresarCantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Cantidad"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Seleccione la unidad, si no esta, seleccione 'Otro' y escribala abajo"
+        />
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ingresarUnidad"
+        android:layout_marginTop="20dp"
+        android:entries="@array/unidad"
+        />
+
+    <EditText
+        android:id="@+id/otraUnidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Otra unidad"
+        />
+
+    <Button
+        android:id="@+id/botonIngresarProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ingresarProducto"
+        android:text="Ingresar Producto" />
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">EjemploBD</string>
+    <string-array name="unidad">
+        <item>Otro</item>
+        <item>Unidades</item>
+        <item>Kilos</item>
+        <item>Litros</item>
+        <item>Cajas</item>
+        <item>Paquetes</item>
+    </string-array>
+</resources>
