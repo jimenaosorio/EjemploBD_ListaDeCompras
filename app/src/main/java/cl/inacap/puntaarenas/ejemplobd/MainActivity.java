@@ -4,6 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import cl.inacap.puntaarenas.ejemplobd.modelo.ComprasDatabaseHelper;
+import cl.inacap.puntaarenas.ejemplobd.modelo.Producto;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,9 +21,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void verLista(View view)
     {
-        Intent intent=new Intent(this,
-                ListaProductosActivity.class);
-        startActivity(intent);
+        ComprasDatabaseHelper helper=new ComprasDatabaseHelper(this);
+        try {
+            ArrayList<Producto> productos =
+                    (ArrayList<Producto>) helper.listaProductos();
+            Intent intent = new Intent(this,
+                        ListaProductosActivity.class);
+            startActivity(intent);
+
+        }catch (Exception e){
+            Toast.makeText(this, "No hay productos en la lista",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
     public void ingresarNuevo(View view)
     {
@@ -28,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void eliminarComprados(View view)
     {
-
+        ComprasDatabaseHelper helper=new ComprasDatabaseHelper(this);
+        String mensaje=helper.eliminarComprados();
+        Toast.makeText(this,mensaje,Toast.LENGTH_SHORT).show();
     }
 }
